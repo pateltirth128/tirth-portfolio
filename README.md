@@ -9,7 +9,7 @@ Terminal-themed personal portfolio. Computer Science student at the University o
 ---
 
 ## Academic History
-BSc Computer Science at the University of Regina (2024 – 2028), plus high school.
+BSc Computer Science at the University of Regina (2024-2028), plus high school.
 
 ![Academic History](doc/education.png)
 
