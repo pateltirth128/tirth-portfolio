@@ -13,10 +13,30 @@ const jetbrains = JetBrains_Mono({
   variable: "--font-jetbrains",
 });
 
+const siteUrl = "https://tirth1228-portfolio.vercel.app";
+const siteTitle = "Tirth's Portfolio";
+const siteDescription =
+  "Portfolio of Tirth Patel - Computer Science student at the University of Regina, focused on cybersecurity.";
+
 export const metadata: Metadata = {
-  title: "Tirth Patel | CS'UofRegina",
-  description:
-    "Portfolio of Tirth Patel - Computer Science student at the University of Regina, focused on cybersecurity.",
+  metadataBase: new URL(siteUrl),
+  title: siteTitle,
+  description: siteDescription,
+  // Link previews on WhatsApp, LinkedIn, Discord, etc.
+  openGraph: {
+    title: siteTitle,
+    description: siteDescription,
+    url: siteUrl,
+    siteName: siteTitle,
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: siteTitle }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
