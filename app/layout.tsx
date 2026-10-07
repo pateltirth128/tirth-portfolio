@@ -14,9 +14,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 const siteUrl = "https://tirth1228-portfolio.vercel.app";
-const siteTitle = "Tirth's Portfolio";
+const siteTitle = "About Tirth";
 const siteDescription =
-  "Portfolio of Tirth Patel - Computer Science student at the University of Regina, focused on cybersecurity.";
+  "Portfolio of Him- CS'student at UofRegina. Looking for Co-op Opportunity.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
