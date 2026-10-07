@@ -1,4 +1,4 @@
- # Tirth Patel - Portfolio
+ # Tirth Patel | Portfolio
 
 Terminal-themed personal portfolio. Computer Science student at the University of Regina (Co-op Program), focused on cybersecurity: blue team, SOC, and cloud security and More.
 
