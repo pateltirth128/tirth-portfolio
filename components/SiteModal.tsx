@@ -13,8 +13,8 @@ const socials = [
 ];
 
 export default function SiteModal({ open, onClose }: Props) {
-  const [mounted, setMounted] = useState(false); // createPortal needs the browser DOM, so wait until the page has loaded
-  const [show, setShow] = useState(false);       // switches on one frame later so the open animation plays
+  const [mounted, setMounted] = useState(false);
+  const [show, setShow] = useState(false);
 
   useEffect(() => setMounted(true), []);
 
@@ -23,11 +23,18 @@ export default function SiteModal({ open, onClose }: Props) {
     const raf = requestAnimationFrame(() => setShow(true));
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     document.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden"; // lock the page behind the popup so it does not scroll
+
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.overflow = "hidden";
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
+
     return () => {
       cancelAnimationFrame(raf);
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
     };
   }, [open, onClose]);
 
@@ -36,15 +43,14 @@ export default function SiteModal({ open, onClose }: Props) {
   return createPortal(
     <div
       onClick={onClose}
-      className={`fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/60 backdrop-blur-md transition-opacity duration-200 ${show ? "opacity-100" : "opacity-0"}`}
+      className={`fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto overscroll-contain px-4 py-4 bg-black/85 transform-gpu transition-opacity duration-150 ${show ? "opacity-100" : "opacity-0"}`}
     >
       <div
-        onClick={(e) => e.stopPropagation()} // clicking inside the box should not close it
+        onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
-        className={`relative w-full max-w-md rounded-2xl border border-neon/20 bg-[#0d0d0d] shadow-[0_0_40px_rgba(0,255,65,0.12)] transition-all duration-200 ${show ? "scale-100 translate-y-0" : "scale-95 translate-y-2"}`}
+        className="relative my-auto w-full max-w-md max-h-[calc(100svh-2rem)] overflow-y-auto rounded-none border border-neon/40 bg-[#0d0d0d] shadow-[6px_6px_0_0_rgba(0,255,65,0.35)]"
       >
-        {/* Close button in the top-right corner */}
         <button
           onClick={onClose}
           aria-label="Close"
@@ -53,7 +59,7 @@ export default function SiteModal({ open, onClose }: Props) {
           <X size={18} />
         </button>
 
-        <div className="p-7 pt-9">
+        <div className="p-6 pt-9 md:p-7 md:pt-9">
           <h3 className="text-2xl font-bold font-mono text-white mb-3 pr-8">
             You&apos;re <span className="text-neon">already here.</span>
           </h3>
@@ -68,7 +74,7 @@ export default function SiteModal({ open, onClose }: Props) {
             href={personalInfo.cv}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full px-6 py-3 bg-neon text-dark font-mono font-bold hover:opacity-90 transition-all rounded-sm flex items-center justify-center gap-2 mb-5"
+            className="w-full px-6 py-3 bg-neon text-dark font-mono font-bold hover:opacity-90 transition-opacity rounded-none flex items-center justify-center gap-2 mb-5"
           >
             <MousePointerClick size={16} /> Click Here
           </a>
@@ -81,7 +87,7 @@ export default function SiteModal({ open, onClose }: Props) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={name}
-                className="h-11 w-11 rounded-lg border border-white/10 bg-white/5 flex items-center justify-center text-gray-400 hover:text-neon hover:border-neon/40 transition-colors"
+                className="h-11 w-11 rounded-none border border-white/10 bg-white/5 flex items-center justify-center text-gray-400 hover:text-neon hover:border-neon/40 transition-colors"
               >
                 <Icon size={18} />
               </a>

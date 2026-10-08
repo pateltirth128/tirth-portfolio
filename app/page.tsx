@@ -19,7 +19,7 @@ export default function Home() {
       <TerminalHero />
 
       <div className="border-y border-white/5 py-8 bg-black/20 backdrop-blur-sm">
-        <div className="flex justify-center gap-8 flex-wrap max-w-5xl mx-auto px-6">
+        <div className="flex justify-center gap-x-8 gap-y-3 flex-wrap max-w-6xl mx-auto px-6 md:px-8">
           {skills.map((skill) => (
             <span key={skill} className="font-mono text-sm text-gray-500 hover:text-neon transition-colors cursor-default">
               {skill}

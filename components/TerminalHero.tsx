@@ -4,13 +4,12 @@ import { Terminal, Download, FolderOpen } from "lucide-react";
 import { personalInfo, heroTyping, heroIntro } from "@/lib/data";
 import TranscriptButton from "./TranscriptButton";
 
-// Same style for all three buttons: outlined, neon text, even size
 const btnClass =
   "h-11 min-w-[170px] px-5 inline-flex items-center justify-center gap-2 font-mono text-sm rounded-sm transition-all border border-gray-700 text-neon hover:bg-neon/10";
 
 export default function TerminalHero() {
   return (
-    <section id="about" className="min-h-screen flex flex-col justify-center px-6 md:px-32 max-w-5xl mx-auto pt-20">
+    <section id="about" className="min-h-screen flex flex-col justify-center px-6 md:px-8 max-w-6xl mx-auto pt-20">
       <div className="flex items-center gap-2 text-gray-500 font-mono mb-6 text-sm">
         <Terminal size={16} />
         <span>{personalInfo.terminalUser}</span>
@@ -32,7 +31,7 @@ export default function TerminalHero() {
         </span>
       </h1>
 
-      <p className="text-gray-400 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed font-sans">
+      <p className="text-gray-400 text-lg md:text-xl max-w-3xl mb-10 leading-relaxed font-sans">
         {heroIntro.line1} <strong className="text-white">{heroIntro.highlight}</strong>.{" "}
         {heroIntro.line2}
         <br /><br />

@@ -10,9 +10,16 @@ const icons: Record<string, React.ElementType> = {
   food: UtensilsCrossed,
 };
 
+const highlightCols: Record<number, string> = {
+  1: "grid-cols-1",
+  2: "grid-cols-1 md:grid-cols-2",
+  3: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+  4: "grid-cols-1 md:grid-cols-2 xl:grid-cols-4",
+};
+
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 px-6 md:px-32 max-w-5xl mx-auto">
+    <section id="experience" className="py-24 px-6 md:px-8 max-w-6xl mx-auto">
       <h2 className="text-2xl md:text-3xl font-mono text-neon mb-12 flex items-center gap-4">
         <span className="text-white">Other Experience</span>
         <span className="h-px bg-gray-800 flex-grow max-w-xs"></span>
@@ -21,8 +28,10 @@ export default function Experience() {
       <div className="grid grid-cols-1 gap-8">
         {experiences.map((job, i) => {
           const Icon = icons[job.icon] ?? Briefcase;
+          const cols = highlightCols[job.highlights.length] ?? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
+
           return (
-            <SpotlightCard key={i} className="p-8 group">
+            <SpotlightCard key={i} className="p-6 md:p-8 group">
               <div className="relative z-10">
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
                   <div className="flex items-start gap-4">
@@ -64,11 +73,11 @@ export default function Experience() {
 
                 <p className="text-gray-400 leading-relaxed text-sm md:text-base mb-8">{job.summary}</p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div className={`grid ${cols} gap-x-8 gap-y-6 mb-8`}>
                   {job.highlights.map((group, g) => (
                     <div key={g}>
                       <h4 className="font-mono text-neon text-sm mb-3">{group.title}</h4>
-                      <ul className="space-y-3">
+                      <ul className="space-y-2">
                         {group.points.map((point, p) => (
                           <li key={p} className="text-gray-400 text-sm flex items-start">
                             <span className="text-neon font-mono mr-3 flex-shrink-0 mt-[2px]">▹</span>

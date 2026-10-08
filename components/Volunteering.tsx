@@ -6,15 +6,15 @@ import LogoTile from "./LogoTile";
 
 export default function Volunteering() {
   return (
-    <section id="volunteering" className="py-24 px-6 md:px-32 max-w-5xl mx-auto">
+    <section id="volunteering" className="py-24 px-6 md:px-8 max-w-6xl mx-auto">
       <h2 className="text-2xl md:text-3xl font-mono text-neon mb-12 flex items-center gap-4">
         <span className="text-white">Volunteering</span>
         <span className="h-px bg-gray-800 flex-grow max-w-xs"></span>
       </h2>
 
-      <div className="grid grid-cols-1 gap-8">
+      <div className={`grid grid-cols-1 ${volunteering.length > 1 ? "lg:grid-cols-2" : ""} gap-8`}>
         {volunteering.map((v, i) => (
-          <SpotlightCard key={i} className="p-8 group">
+          <SpotlightCard key={i} className="p-6 md:p-8 group h-full">
             <div className="relative z-10">
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
                 <div className="flex items-start gap-4">

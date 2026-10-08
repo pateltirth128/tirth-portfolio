@@ -18,22 +18,21 @@ export default function Projects() {
   const [siteOpen, setSiteOpen] = useState(false);
 
   return (
-    <section id="projects" className="py-24 px-6 md:px-32 max-w-5xl mx-auto">
+    <section id="projects" className="py-24 px-6 md:px-8 max-w-6xl mx-auto">
       <h2 className="text-2xl md:text-3xl font-mono text-neon mb-12 flex items-center gap-4">
         <span className="text-white">Projects</span>
         <span className="h-px bg-gray-800 flex-grow max-w-xs"></span>
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         {projects.map((item, i) => {
           const project = item as typeof item & ProjectExtras;
           const isThisSite = project.slug === "portfolio-website";
 
           return (
             <SpotlightCard key={i} className="h-full group">
-              <div className="p-8 flex flex-col h-full">
-                {/* Project logo on the left, impact badge on the right */}
-                <div className="flex justify-between items-start mb-6">
+              <div className="p-6 xl:p-7 flex flex-col h-full">
+                <div className="flex justify-between items-start gap-3 mb-6">
                   {project.logo ? (
                     <div
                       className={`h-12 ${project.logoWide ? "w-32" : "w-12"} rounded-xl overflow-hidden flex-shrink-0 flex items-center justify-center ${project.logoLight ? "bg-white p-1.5" : ""}`}
@@ -51,7 +50,7 @@ export default function Projects() {
                     <Folder size={40} className="text-neon" />
                   )}
                   {project.impact && (
-                    <span className="text-[10px] font-mono border border-neon/30 text-neon px-2 py-1 rounded bg-neon/5 shadow-[0_0_6px_rgba(0,255,65,0.12)]">
+                    <span className="text-[10px] font-mono border border-neon/30 text-neon px-2 py-1 rounded bg-neon/5 shadow-[0_0_6px_rgba(0,255,65,0.12)] text-right">
                       {project.impact}
                     </span>
                   )}
@@ -70,8 +69,7 @@ export default function Projects() {
                   ))}
                 </ul>
 
-                {/* Case study link and external link, pinned to the bottom of the card */}
-                <div className="mt-auto pt-5 border-t border-white/10 flex items-center justify-between gap-3">
+                <div className="mt-auto pt-5 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
                   <Link
                     href={`/projects/${project.slug}`}
                     className="flex items-center gap-2 text-neon text-sm font-mono hover:gap-3 transition-all"
@@ -84,14 +82,14 @@ export default function Projects() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 rounded-md border border-white/10 bg-white/5 text-gray-300 text-sm font-mono hover:text-neon hover:border-neon/40 transition-colors"
+                      className="flex items-center gap-2 px-3 py-2 rounded-md border border-white/10 bg-white/5 text-gray-300 text-sm font-mono hover:text-neon hover:border-neon/40 transition-colors"
                     >
                       <Github size={16} /> GitHub ↗
                     </a>
                   ) : isThisSite ? (
                     <button
                       onClick={() => setSiteOpen(true)}
-                      className="flex items-center gap-2 px-4 py-2 rounded-md border border-white/10 bg-white/5 text-gray-300 text-sm font-mono hover:text-neon hover:border-neon/40 transition-colors"
+                      className="flex items-center gap-2 px-3 py-2 rounded-md border border-white/10 bg-white/5 text-gray-300 text-sm font-mono hover:text-neon hover:border-neon/40 transition-colors"
                     >
                       <Globe size={16} /> Website ↗
                     </button>
