@@ -8,28 +8,17 @@ Terminal-themed personal portfolio. Computer Science student at the University o
 
 ---
 
-## Academic History
-BSc Computer Science at the University of Regina (2024-2028), plus high school.
+## What's inside
 
-![Academic History](doc/education.png)
+**Academic History:** BSc Computer Science at the University of Regina (2024-2028), plus high school.
 
-## Projects
-Security and software projects, each with its own case-study page and GitHub link.
+**Projects:** Security and software projects, each with its own case-study page and GitHub link.
 
 ![Projects](doc/projects.png)
 
-## Experience
-IT internship, the University of Regina Co-op Program, part-time roles, and volunteering.
+**Experience:** IT internship, the University of Regina Co-op Program, part-time roles, and volunteering.
 
-<p>
-  <img src="doc/experience-field.png" alt="Field Experience" width="49%" />
-  <img src="doc/experience-other.png" alt="Other Experience" width="49%" />
-</p>
-
-![Volunteering](doc/experience-volunteering.png)
-
-## Verified Credentials
-Certificates and experience letters, each linked to the original PDF.
+**Verified Credentials:** Certificates and experience letters, each linked to the original PDF.
 
 ![Verified Credentials](doc/certifications.png)
 
