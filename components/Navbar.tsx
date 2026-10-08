@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { Github, Linkedin, Instagram, Terminal, ChevronDown, Menu, X } from "lucide-react";
 import { personalInfo } from "@/lib/data";
+import CoffeeCall from "./CoffeeCall";
 
 const DiscordIcon = ({ size = 18 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -17,8 +18,7 @@ const socials = [
   { href: personalInfo.discord, label: "Discord", icon: <DiscordIcon size={18} /> },
 ];
 
-// Menu order: About, Academic History, Projects, Experience (dropdown), Verified Credentials
-// Each link goes to its own section.
+
 const mainLinks = [
   { href: "/#about", label: "About" },
   { href: "/#education", label: "Academic History" },
@@ -121,6 +121,7 @@ export default function Navbar() {
                 {s.icon}
               </a>
             ))}
+            <CoffeeCall className="text-gray-400 hover:text-neon transition-colors" />
           </div>
 
           <a
@@ -212,6 +213,7 @@ export default function Navbar() {
                 {s.icon}
               </a>
             ))}
+            <CoffeeCall className="text-gray-400 hover:text-neon transition-colors" />
           </div>
         </div>
       )}
