@@ -87,20 +87,6 @@ public/         Images, logos and CV
 doc/            README screenshots
 ```
 
-## Run Locally
-
-```bash
-git clone https://github.com/pateltirth128/tirth-portfolio.git
-cd tirth-portfolio
-npm install
-npm run dev
-```
-
-Then open [http://localhost:3000](http://localhost:3000).
-
-## Deployment
-
-Deployed on Vercel, and redeploys automatically on every push to `main`.
 
 ## Contact
 
