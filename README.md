@@ -70,12 +70,12 @@ Certificates and experience letters, each linked to the original document:
 
 | Area | Tools |
 |---|---|
-| Framework | Next.js 14 (App Router) |
-| Language | TypeScript |
-| Styling | Tailwind CSS |
-| Icons | Lucide React |
-| Animation | Typewriter Effect, HTML canvas |
 | Hosting | Vercel |
+| Language | TypeScript |
+| Icons | Lucide React |
+| Styling | Tailwind CSS |
+| Animation | Typewriter Effect, HTML canvas |
+
 
 ## Project Structure
 
